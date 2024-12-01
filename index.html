@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southern Sky</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+    <h1 class="title">Southern Sky</h1>
+    
+        <nav>
+       <div class="dropdown">
+    <button class="dropdown-btn">☰ Menu</button>
+    <div class="dropdown-content">
+        <a href="#">Change Language</a>
+        <a href="#">Toggle Units</a>
+        <a href="#">About</a>
+        <a href="#">Contact Details</a>
+        <a href="#" id="showDefaultCityInput">Set a Default City</a>
+        <div id="setDefaultCity" style="display: none;">
+    <input type="text" id="newCityInput" placeholder="Enter your default city" />
+    <button id="saveDefaultCity">Set Default City</button>
+</div>
+    </div>
+</div>
+
+
+        <div class="dropdown" id="citiesDropdown">
+            <button class="cities-btn">Cities</button>
+            <div class="cities-content" id="cityDropdown">
+                <!-- Cities will be added by JS -->
+            </div>
+        </div>
+    </nav>
+</header>
+    
+    <main>
+        
+      <div id="search-bar">
+        <input type="text" id="citySearch" placeholder="Search for a city..." />
+        <button id="searchButton">Search</button>
+    </div>  
+        
+        <section id="dailyDisplay">
+            <h2>Today's Weather</h2>
+            <p>Select a city to view the weather.</p>
+        </section>
+        <section id="fiveDayWeather">
+            <h2>5-Day Forecast</h2>
+            <p>Select a city to view the forecast.</p>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
