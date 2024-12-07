@@ -3,55 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Southern Sky</title>
+    <title data-lang-key="title">Southern Sky</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-    <h1 class="title">Southern Sky</h1>
-    
+        <h1 class="title" data-lang-key="headerTitle">Southern Sky</h1>
         <nav>
-       <div class="dropdown">
-    <button class="dropdown-btn">☰ Menu</button>
-    <div class="dropdown-content">
-        <a href="#">Change Language</a>
-        <a href="#">Toggle Units</a>
-        <a href="#">About</a>
-        <a href="#">Contact Details</a>
-        <a href="#" id="showDefaultCityInput">Set a Default City</a>
-        <div id="setDefaultCity" style="display: none;">
-    <input type="text" id="newCityInput" placeholder="Enter your default city" />
-    <button id="saveDefaultCity">Set Default City</button>
-</div>
-    </div>
-</div>
-
-
-        <div class="dropdown" id="citiesDropdown">
-            <button class="cities-btn">Cities</button>
-            <div class="cities-content" id="cityDropdown">
-                <!-- Cities will be added by JS -->
+            <div class="dropdown">
+                <button class="dropdown-btn" data-lang-key="menu">☰ Menu</button>
+                <div class="dropdown-content">
+                    <a href="#" id="changeLanguage" data-lang-key="changeLanguage">Change Language</a>
+                    <div id="languageOptions" style="display: none;">
+                    <button class="language-btn" data-language="en">English</button>
+                    <button class="language-btn" data-language="fr">French</button>
+                    </div>
+                    <a href="#" id="toggleUnits" data-lang-key="toggleUnits">Toggle Units</a>
+                    <div id="unitOptions" style="display: none;">
+                    <button class="unit-btn" data-unit="metric">Metric (°C)</button>
+                    <button class="unit-btn" data-unit="imperial">Imperial (°F)</button>
+                    </div>      
+                   
+                    <a href="#about" data-lang-key="about">About</a>
+                   
+                    <a href="#" data-lang-key="contact">Contact Details</a>
+                    <a href="#" id="showDefaultCityInput" data-lang-key="setDefaultCity">Set a Default City</a>
+                    <div id="setDefaultCity" style="display: none;">
+                        <input type="text" id="newCityInput" placeholder="Enter your default city" />
+                        <button id="saveDefaultCity" data-lang-key="saveDefaultCity">Set Default City</button>
+                    </div>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+
+            <div class="dropdown" id="citiesDropdown">
+                <button class="cities-btn" data-lang-key="cities">Cities</button>
+                <div class="cities-content" id="cityDropdown">
+                    <!-- Cities will be added by JS -->
+                </div>
+            </div>
+        </nav>
+    </header>
     
     <main>
-        
-      <div id="search-bar">
-        <input type="text" id="citySearch" placeholder="Search for a city..." />
-        <button id="searchButton">Search</button>
-    </div>  
+        <div id="search-bar">
+            <input type="text" id="citySearch" placeholder="Search for a city..." />
+            <button id="searchButton" data-lang-key="searchButton">Search</button>
+        </div>  
         
         <section id="dailyDisplay">
-            <h2>Today's Weather</h2>
-            <p>Select a city to view the weather.</p>
+            <h2 data-lang-key="todayWeatherTitle">Today's Weather</h2>
+            <p data-lang-key="todayWeatherText">Select a city to view the weather.</p>
         </section>
         <section id="fiveDayWeather">
-            <h2>5-Day Forecast</h2>
-            <p>Select a city to view the forecast.</p>
+            <h2 data-lang-key="forecastTitle">5-Day Forecast</h2>
+            <p data-lang-key="forecastText">Select a city to view the forecast.</p>
         </section>
+        
+        
+        
     </main>
     <script src="script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
