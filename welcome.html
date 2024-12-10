@@ -3,14 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Southern Sky</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Southern Sky - Home</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
-    <div class="welcome-container">
-        <h1>Welcome to Southern Sky</h1>
-        <p>Your personalized weather forecast experience.</p>
-        <a href="index.html" class="details-btn">See Details</a>
+    <header>
+        <nav class="navbar">
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="index.html" class="nav-link">Main Page</a>
+        </nav> 
+    </header>
+    <main>
+        
+        
+    <div id="homepage" class="dynamic-bg">
+        <div class="content">
+            <h1>Welcome to Southern Sky</h1>
+            <div id="clock-section">
+            <h2>Current Time</h2>
+            <p id="clock">Loading...</p>
+        </div>
+            <div id="weather-section">
+    <h2>Today's Weather</h2>
+    <p id="weather-info">Loading weather...</p>
+    <ul id="weather-details">
+        <li><strong>Temperature:</strong> <span id="temp">-</span>°C</li>
+        <li><strong>Feels Like:</strong> <span id="feels-like">-</span>°C</li>
+        <li><strong>Humidity:</strong> <span id="humidity">-</span>%</li>
+        <li><strong>Cloudiness:</strong> <span id="cloudiness">-</span>%</li>
+        <li><strong>Condition:</strong> <span id="condition">-</span></li>
+        <li><strong>Pressure:</strong> <span id="pressure">-</span> hPa</li>
+        <li><strong>Wind Speed:</strong> <span id="wind-speed">-</span> m/s</li>
+        <li><strong>Wind Direction:</strong> <span id="wind-dir">-</span>°</li>
+        <li><strong>Sunrise:</strong> <span id="sunrise">-</span></li>
+        <li><strong>Sunset:</strong> <span id="sunset">-</span></li>
+        <li><strong>Local Time:</strong> <span id="local-time">-</span></li>
+    </ul>
+    <button onclick="location.href='index.html'">See Details</button>
+</div>
+        </div>
     </div>
+    </main>
+    <script src="home.js"></script>
 </body>
 </html>
+
+
+
