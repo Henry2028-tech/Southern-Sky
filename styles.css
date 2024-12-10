@@ -17,6 +17,8 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+
+
 .title {
     font-size: 2.8rem;
     margin: 0;
@@ -69,6 +71,84 @@ nav {
 .dropdown {
     position: relative;
 }
+
+/* General button styling */
+button, .dropdown-content a {
+    display: block; /* Make buttons and links stack vertically */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white; /* Text color */
+    border: none; /* Remove borders for buttons */
+    text-align: left; /* Align text to the left */
+    text-decoration: none; /* Remove underline for links */
+    font-size: 16px; /* Font size */
+    padding: 10px 15px; /* Inner padding */
+    border-radius: 5px; /* Rounded corners */
+    margin: 5px 0; /* Space between buttons */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s, color 0.2s; /* Smooth hover effect */
+}
+
+
+
+/* Hover effect for buttons and links */
+button:hover, .dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+    color: #00ffcc; /* Highlighted text color */
+}
+
+#homeButton {
+    display: block; /* Ensure it is visible as a block */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    color: white; /* Bright text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Slightly larger font for visibility */
+    padding: 10px 15px; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded corners */
+    margin: 5px 0; /* Add spacing from other elements */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effects */
+    opacity: o.5;
+}
+
+/* Hover effect */
+#homeButton:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Light hover background */
+    color: #00ffcc; /* Highlighted text color */
+    border: 1px solid #00ffcc; /* Optional: Border on hover */
+}
+
+
+/* Specific styles for input fields in the dropdown */
+#newCityInput {
+    display: block;
+    width: calc(100% - 20px); /* Full width minus padding */
+    margin: 10px 0; /* Space around input */
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.8); /* Background matching buttons */
+    color: white; /* Input text color */
+    font-size: 16px;
+}
+
+/* Input field focus styles */
+#newCityInput:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #00ffcc; /* Highlight border on focus */
+}
+
+/* Style for the Save Default City button */
+#saveDefaultCity {
+    background-color: #00ffcc; /* Highlighted background color */
+    color: black; /* Dark text color for contrast */
+    font-weight: bold; /* Bold text */
+}
+
+#saveDefaultCity:hover {
+    background-color: #00cca3; /* Slightly darker green on hover */
+    color: white; /* White text on hover */
+}
+
+
 
 .dropdown-btn, .cities-btn {
     background: #1b2735;
@@ -354,4 +434,30 @@ a:hover {
 /* Visited link styles */
 a:visited {
     color: #4a4a4a; /* Neutral gray for visited links */
+}
+
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
 }
