@@ -9,29 +9,33 @@
 <body>
     <header>
         <h1 class="title" data-lang-key="headerTitle">Southern Sky</h1>
-        <nav>
+       
+             <nav>
             <div class="dropdown">
-                <button class="dropdown-btn" data-lang-key="menu">☰ Menu</button>
-                <div class="dropdown-content">
-                    <a href="#" id="changeLanguage" data-lang-key="changeLanguage">Change Language</a>
-                    <div id="languageOptions" style="display: none;">
-                    <button class="language-btn" data-language="en">English</button>
-                    <button class="language-btn" data-language="fr">French</button>
-                    </div>
-                    <a href="#" id="toggleUnits" data-lang-key="toggleUnits">Toggle Units</a>
-                    <div id="unitOptions" style="display: none;">
-                    <button class="unit-btn" data-unit="metric">Metric (°C)</button>
-                    <button class="unit-btn" data-unit="imperial">Imperial (°F)</button>
-                    </div>      
-                   
-                     <a href="#" id="showDefaultCityInput" data-lang-key="setDefaultCity">Set a Default City</a>
-                    <div id="setDefaultCity" style="display: none;">
-                        <input type="text" id="newCityInput" placeholder="Enter your default city" />
-                        <button id="saveDefaultCity" data-lang-key="saveDefaultCity">Set Default City</button>
-                    </div>
-                </div>
-            </div>
+    <button class="dropdown-btn" data-lang-key="menu">☰ Menu</button>
+    <div class="dropdown-content">
+        <!-- Home Button -->
+        <a href="home.html" id="homeButton" data-lang-key="home">Home</a>
 
+        <a href="#" id="changeLanguage" data-lang-key="changeLanguage">Change Language</a>
+        <div id="languageOptions" style="display: none;">
+            <button class="language-btn" data-language="en">English</button>
+            <button class="language-btn" data-language="fr">French</button>
+        </div>
+        
+        <a href="#" id="toggleUnits" data-lang-key="toggleUnits">Toggle Units</a>
+        <div id="unitOptions" style="display: none;">
+            <button class="unit-btn" data-unit="metric">Metric (°C)</button>
+            <button class="unit-btn" data-unit="imperial">Imperial (°F)</button>
+        </div>
+
+        <a href="#" id="showDefaultCityInput" data-lang-key="setDefaultCity">Set a Default City</a>
+        <div id="setDefaultCity" style="display: none;">
+            <input type="text" id="newCityInput" placeholder="Enter your default city" />
+            <button id="saveDefaultCity" data-lang-key="saveDefaultCity">Set Default City</button>
+        </div>
+    </div>
+</div>
             <div class="dropdown" id="citiesDropdown">
                 <button class="cities-btn" data-lang-key="cities">Cities</button>
                 <div class="cities-content" id="cityDropdown">
@@ -39,6 +43,8 @@
                 </div>
             </div>
         </nav>
+        
+        
     </header>
     
     <main>
@@ -143,7 +149,6 @@ By mukuka henry, </p><p>SIN: 23052941
     <script src="script.js"></script>
 </body>
 </html>
-
 
 
 
