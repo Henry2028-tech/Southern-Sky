@@ -1,6 +1,5 @@
 /* styles.css */
 
-/* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -132,6 +131,7 @@ section {
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     width: 100%;
+    opacity: 0.5;
 }
 
 h2 {
@@ -152,7 +152,8 @@ p {
     align-items: center;
     justify-content: center;
     min-height: 150px;
-    background: rgba(0, 0, 0, 0.4);
+    
+    opacity: 0.5;
 }
 
 #dailyDisplay p {
@@ -168,6 +169,7 @@ p {
     gap: 20px;
     padding: 20px;
     background: rgba(0, 0, 0, 0.4);
+    opacity: 0.5;
 }
 
 #fiveDayWeather p {
@@ -206,3 +208,150 @@ p {
     filter: drop-shadow(3px 3px 5px rgba(0, 0, 0, 0.5)); /* Adds a subtle shadow */
 }
 
+#userFeedback {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #d5d3d2;
+    opacity: 0.5;
+}
+
+#userFeedback h2, #userFeedback h3 {
+    margin-bottom: 10px;
+}
+
+#feedbackForm textarea, #feedbackForm input {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#feedbackForm button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007CeF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#feedbackForm button:hover {
+    background-color: #0056b3;
+}
+
+#feedbackList {
+    list-style: none;
+    padding: 0;
+}
+
+#feedbackList li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.feedback-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.feedback-section iframe {
+    max-width: 100%;
+    width: 480px; /* You can adjust this width as needed */
+    height: 260px; /* Adjust the height as needed */
+}
+
+
+    #footer {
+        background-color: #333;
+        color: #ffff;
+        text-align: center;
+        padding: 20px 10px;
+        margin-top: 20px;
+    }
+
+    #footer .footer-content {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    #footer nav a {
+        color: #ffm107;
+        text-decoration: none;
+        margin: 0 10px;
+    }
+
+    #footer nav a:hover {
+        text-decoration: underline;
+    }
+
+    #footer p {
+        margin: 10px 0;
+    }
+
+
+
+    #infoModal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 70%;
+        height: 65%;
+        background: rgba(0, 0, 0, 0.8);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    #infoModal.show {
+        display: flex;
+    }
+
+    #infoContent {
+        background: #ggg;
+        padding: 20px;
+        width: 90%;
+        max-width: 500px;
+        max-height: 80%;
+        overflow-y: auto;
+        border-radius: 8px;
+        position: relative;
+    }
+
+    #infoContent #closeModal {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    #infoText {
+        font-size: 14px;
+        color: #3333;
+        line-height: 1.6;
+    }
+/* Default link styles */
+a {
+    color: #0056b3; /* A muted blue that's clean and visible */
+    text-decoration: none;
+}
+
+/* Hover effect */
+a:hover {
+    color: #003d80; /* A slightly darker blue for hover */
+    text-decoration: underline;
+}
+
+/* Visited link styles */
+a:visited {
+    color: #4a4a4a; /* Neutral gray for visited links */
+}
