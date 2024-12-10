@@ -24,10 +24,7 @@
                     <button class="unit-btn" data-unit="imperial">Imperial (°F)</button>
                     </div>      
                    
-                    <a href="#about" data-lang-key="about">About</a>
-                   
-                    <a href="#" data-lang-key="contact">Contact Details</a>
-                    <a href="#" id="showDefaultCityInput" data-lang-key="setDefaultCity">Set a Default City</a>
+                     <a href="#" id="showDefaultCityInput" data-lang-key="setDefaultCity">Set a Default City</a>
                     <div id="setDefaultCity" style="display: none;">
                         <input type="text" id="newCityInput" placeholder="Enter your default city" />
                         <button id="saveDefaultCity" data-lang-key="saveDefaultCity">Set Default City</button>
@@ -54,14 +51,95 @@
             <h2 data-lang-key="todayWeatherTitle">Today's Weather</h2>
             <p data-lang-key="todayWeatherText">Select a city to view the weather.</p>
         </section>
+        
+      
+        
         <section id="fiveDayWeather">
             <h2 data-lang-key="forecastTitle">5-Day Forecast</h2>
             <p data-lang-key="forecastText">Select a city to view the forecast.</p>
         </section>
+         <section id="weatherChart">
+    <canvas id="myWeatherChart"></canvas>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
         
+        <section id="mapDisplay">
+    <div id="map" style="height: 400px;"></div>
+</section>
+
+<!-- Include Leaflet.js CSS and JS -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<!-- User Location and Preferences -->
+<section id="userSettings">
+    <h2>Settings</h2>
+    <label for="locationInput">Enter Location:</label>
+    <input type="text" id="locationInput" placeholder="City or ZIP Code" />
+    <label for="unitSelect">Select Unit:</label>
+    <select id="unitSelect">
+        <option value="metric">Celsius</option>
+        <option value="imperial">Fahrenheit</option>
+    </select>
+    <button id="saveSettings">Save</button>
+</section>
+
+      <section id="userFeedback">
+    <h2>User Feedback</h2>
+    <form id="feedbackForm">
+        <label for="feedbackInput">Your Feedback:</label>
+        <textarea id="feedbackInput" rows="4" placeholder="Share your thoughts..."></textarea>
+        <br>
+        <label for="userName">Your Name:</label>
+        <input type="text" id="userName" placeholder="Optional" />
+        <br>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <h3>Recent Feedback</h3>
+    <ul id="feedbackList">
+        <!-- User feedback will be displayed here -->
+    </ul>
+</section>  
         
+       <section class="feedback-section">
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfId0TKQ5xqLx23rPaxzmvkTmbIJWkhIoPV4uecHYQq9qtPXQ/viewform?embedded=true" width="440" height="207" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</section>
+          
         
     </main>
+  <!-- Footer Section -->
+<footer id="footer">
+    <div class="footer-content">
+        <div class="footer-buttons">
+            <button id="aboutBtn">About</button>
+            <button id="helpBtn">Help</button>
+            <button id="contactBtn">Contact Us</button>
+        </div>
+        <div class="footer-links">
+             <li><a href="http://www.icuzambia.net">ICU Zambia</a></li>
+             <li><a href="https://www.zrdc.org">ZRDC</a></li>
+
+            <a href="https://www.icc-cricket.com/" target="_blank">ICU Link</a> | 
+            <a href="https://www.nrdc.org/" target="_blank">NRDC Link</a>
+            
+        <td><span class="copyright">
+            <p>Maamba</p>
+     <p>All Rights Reserved.
+     </p>
+     <p>Designed and Maintained 
+By mukuka henry, </p><p>SIN: 23052941
+     </p></td>
+</footer>
+
+<!-- Modal-like Section for Information -->
+<div id="infoModal" class="hidden">
+    <div id="infoContent">
+        <span id="closeModal">&times;</span>
+        <div id="infoText"></div>
+    </div>
+</div>
     <script src="script.js"></script>
 </body>
 </html>
@@ -72,6 +150,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+   
+
+
+ 
   
   
 
