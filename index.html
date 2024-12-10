@@ -3,174 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-lang-key="title">Southern Sky</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Southern Sky - Home</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
     <header>
-        <h1 class="title" data-lang-key="headerTitle">Southern Sky</h1>
-       
-             <nav>
-            <div class="dropdown">
-    <button class="dropdown-btn" data-lang-key="menu">☰ Menu</button>
-    <div class="dropdown-content">
-        <!-- Home Button -->
-        <a href="home.html" id="homeButton" data-lang-key="home">Home</a>
-
-        <a href="#" id="changeLanguage" data-lang-key="changeLanguage">Change Language</a>
-        <div id="languageOptions" style="display: none;">
-            <button class="language-btn" data-language="en">English</button>
-            <button class="language-btn" data-language="fr">French</button>
-        </div>
-        
-        <a href="#" id="toggleUnits" data-lang-key="toggleUnits">Toggle Units</a>
-        <div id="unitOptions" style="display: none;">
-            <button class="unit-btn" data-unit="metric">Metric (°C)</button>
-            <button class="unit-btn" data-unit="imperial">Imperial (°F)</button>
-        </div>
-
-        <a href="#" id="showDefaultCityInput" data-lang-key="setDefaultCity">Set a Default City</a>
-        <div id="setDefaultCity" style="display: none;">
-            <input type="text" id="newCityInput" placeholder="Enter your default city" />
-            <button id="saveDefaultCity" data-lang-key="saveDefaultCity">Set Default City</button>
-        </div>
-    </div>
-</div>
-            <div class="dropdown" id="citiesDropdown">
-                <button class="cities-btn" data-lang-key="cities">Cities</button>
-                <div class="cities-content" id="cityDropdown">
-                    <!-- Cities will be added by JS -->
-                </div>
-            </div>
-        </nav>
-        
-        
+        <nav class="navbar">
+    <a href="home.html" class="nav-link">Home</a>
+    <a href="index.html" class="nav-link">Main Page</a>
+        </nav> 
     </header>
-    
     <main>
-        <div id="search-bar">
-            <input type="text" id="citySearch" placeholder="Search for a city..." />
-            <button id="searchButton" data-lang-key="searchButton">Search</button>
-        </div>  
         
-        <section id="dailyDisplay">
-            <h2 data-lang-key="todayWeatherTitle">Today's Weather</h2>
-            <p data-lang-key="todayWeatherText">Select a city to view the weather.</p>
-        </section>
         
-      
-        
-        <section id="fiveDayWeather">
-            <h2 data-lang-key="forecastTitle">5-Day Forecast</h2>
-            <p data-lang-key="forecastText">Select a city to view the forecast.</p>
-        </section>
-         <section id="weatherChart">
-    <canvas id="myWeatherChart"></canvas>
-</section>
-
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-        
-        <section id="mapDisplay">
-    <div id="map" style="height: 400px;"></div>
-</section>
-
-<!-- Include Leaflet.js CSS and JS -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
-<!-- User Location and Preferences -->
-<section id="userSettings">
-    <h2>Settings</h2>
-    <label for="locationInput">Enter Location:</label>
-    <input type="text" id="locationInput" placeholder="City or ZIP Code" />
-    <label for="unitSelect">Select Unit:</label>
-    <select id="unitSelect">
-        <option value="metric">Celsius</option>
-        <option value="imperial">Fahrenheit</option>
-    </select>
-    <button id="saveSettings">Save</button>
-</section>
-
-      <section id="userFeedback">
-    <h2>User Feedback</h2>
-    <form id="feedbackForm">
-        <label for="feedbackInput">Your Feedback:</label>
-        <textarea id="feedbackInput" rows="4" placeholder="Share your thoughts..."></textarea>
-        <br>
-        <label for="userName">Your Name:</label>
-        <input type="text" id="userName" placeholder="Optional" />
-        <br>
-        <button type="submit">Submit Feedback</button>
-    </form>
-    <h3>Recent Feedback</h3>
-    <ul id="feedbackList">
-        <!-- User feedback will be displayed here -->
-    </ul>
-</section>  
-        
-       <section class="feedback-section">
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfId0TKQ5xqLx23rPaxzmvkTmbIJWkhIoPV4uecHYQq9qtPXQ/viewform?embedded=true" width="440" height="207" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-</section>
-          
-        
-    </main>
-  <!-- Footer Section -->
-<footer id="footer">
-    <div class="footer-content">
-        <div class="footer-buttons">
-            <button id="aboutBtn">About</button>
-            <button id="helpBtn">Help</button>
-            <button id="contactBtn">Contact Us</button>
+    <div id="homepage" class="dynamic-bg">
+        <div class="content">
+            <h1>Welcome to Southern Sky</h1>
+            <div id="clock-section">
+            <h2>Current Time</h2>
+            <p id="clock">Loading...</p>
         </div>
-        <div class="footer-links">
-             <li><a href="http://www.icuzambia.net">ICU Zambia</a></li>
-             <li><a href="https://www.zrdc.org">ZRDC</a></li>
-
-            <a href="https://www.icc-cricket.com/" target="_blank">ICU Link</a> | 
-            <a href="https://www.nrdc.org/" target="_blank">NRDC Link</a>
-            
-        <td><span class="copyright">
-            <p>Maamba</p>
-     <p>All Rights Reserved.
-     </p>
-     <p>Designed and Maintained 
-By mukuka henry, </p><p>SIN: 23052941
-     </p></td>
-</footer>
-
-<!-- Modal-like Section for Information -->
-<div id="infoModal" class="hidden">
-    <div id="infoContent">
-        <span id="closeModal">&times;</span>
-        <div id="infoText"></div>
-    </div>
+            <div id="weather-section">
+    <h2>Today's Weather</h2>
+    <p id="weather-info">Loading weather...</p>
+    <ul id="weather-details">
+        <li><strong>Temperature:</strong> <span id="temp">-</span>°C</li>
+        <li><strong>Feels Like:</strong> <span id="feels-like">-</span>°C</li>
+        <li><strong>Humidity:</strong> <span id="humidity">-</span>%</li>
+        <li><strong>Cloudiness:</strong> <span id="cloudiness">-</span>%</li>
+        <li><strong>Condition:</strong> <span id="condition">-</span></li>
+        <li><strong>Pressure:</strong> <span id="pressure">-</span> hPa</li>
+        <li><strong>Wind Speed:</strong> <span id="wind-speed">-</span> m/s</li>
+        <li><strong>Wind Direction:</strong> <span id="wind-dir">-</span>°</li>
+        <li><strong>Sunrise:</strong> <span id="sunrise">-</span></li>
+        <li><strong>Sunset:</strong> <span id="sunset">-</span></li>
+        <li><strong>Local Time:</strong> <span id="local-time">-</span></li>
+    </ul>
+    <button onclick="location.href='index.html'">See Details</button>
 </div>
-    <script src="script.js"></script>
+        </div>
+    </div>
+    </main>
+    <script src="home.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   
-
-
- 
-  
-  
-
 
 
 
