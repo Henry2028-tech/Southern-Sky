@@ -192,6 +192,8 @@ window.onload = function (Livingstone) {
     updateUnits('meteric'); // Initialize units based on the default unit
 };
 
+
+
 function fetch5DayForecast(lat, lon) {
     const forecastApiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}&units=metric`;
 
@@ -259,6 +261,35 @@ function groupForecastsByDate(forecastList) {
 
     return groupedForecasts;
 }
+
+
+function setBackground(weather) {
+  let body = document.body;
+  switch (weather) {
+    case 'Clear':
+      body.style.backgroundImage = "url('clear-sky.jpg')";
+      break;
+    case 'Clouds':
+      body.style.backgroundImage = "url('cloudy.jpg')";
+      break;
+    case 'Rain':
+      body.style.backgroundImage = "url('rainy.jpg')";
+      break;
+    case 'Snow':
+      body.style.backgroundImage = "url('snow.jpg')";
+      break;
+    default:
+      body.style.backgroundImage = "url('default.jpg')";
+  }
+}
+
+// Example usage:
+fetch(`https://api.openweathermap.org/data/2.5/weather?q=city&appid=5acc976ebe4ab27765351cf4d7fb98e2`)
+  .then(response => response.json())
+  .then(data => {
+    const weather = data.weather[0].main; // e.g., Clear, Clouds, Rain, etc.
+    setBackground(weather);
+  });
 
 
 
@@ -629,8 +660,6 @@ const aboutContainer = document.getElementById('about-container');
 
 
 
-
-
 async function updateWeatherAndSections(city) {
     const apiKey = "9ea1fa0b6f05f7283c26d775af7a351a";
     const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -809,5 +838,54 @@ document.getElementById('problemForm').addEventListener('submit', function(event
     document.getElementById('problemForm').reset();
 });
 
+
+const API_KEY = 'api_key'; // Replace with your OpenWeatherMap API key
+const city = 'cityName'; // Replace with the city you want to get the forecast for
+const forecastContainer = document.getElementById('sevenDayWeather'); // Your container for the 7-day forecast
+
+// Function to fetch weather data from the OpenWeatherMap API
+async function fetchWeatherData() {
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=xx.xx&lon=yy.yy&exclude=hourly,minutely&units=metric&appid=${API_KEY}`;
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        updateWeatherForecast(data);
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+    }
+}
+
+// Function to update the weather forecast on the page
+function updateWeatherForecast(data) {
+    // Clear the existing forecast
+    forecastContainer.innerHTML = '';
+
+    // Loop through the 7-day forecast data and create HTML for each day
+    data.daily.forEach((day, index) => {
+        const dayElement = document.createElement('div');
+        dayElement.classList.add('day-row');
+        
+        const dayName = new Date(day.dt * 1000).toLocaleString('en-us', { weekday: 'long' });
+        const weatherIcon = `<img src="https://openweathermap.org/img/wn/${day.weather[0].icon}.png" alt="${day.weather[0].description}" />`;
+        const temperature = `${Math.round(day.temp.day)}°C`;
+
+        // Add the day's weather information
+        dayElement.innerHTML = `
+            <h3>${dayName}</h3>
+            <div>${weatherIcon}</div>
+            <p>${temperature}</p>
+            <p>${day.weather[0].description}</p>
+        `;
+
+        // Append the day element to the container
+        forecastContainer.appendChild(dayElement);
+    });
+}
+
+// Fetch weather data when the page loads
+fetchWeatherData();
+
+// Optionally, set up an interval to refresh the weather data every 15 minutes (900,000 ms)
+setInterval(fetchWeatherData, 900000); // Refresh every 15 minutes
 
 
