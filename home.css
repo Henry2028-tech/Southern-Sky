@@ -6,6 +6,24 @@ body, html {
     font-family: Arial, sans-serif;
 }
 
+body {
+      margin: 0;
+      padding: 0;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out; /* Smooth transition effect */
+      height: 100vh; /* Ensures body covers the full viewport */
+    }
+    #content {
+      color: white;
+      text-align: center;
+      padding-top: 40vh; /* Centers text vertically */
+      font-family: Arial, sans-serif;
+      font-size: 24px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
 .navbar {
     display: flex;
     justify-content: flex-start;
@@ -87,10 +105,72 @@ button:hover {
     padding: 0;
     margin: 10px 0;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     text-align: left;
 }
 
 #weather-details li {
     margin-bottom: 5px;
 }
+
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Wrapper Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body is at least the height of the viewport */
+    font-family: Arial, sans-serif;
+}
+
+.wrapper {
+    flex: 1; /* Ensures the wrapper takes all available space */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main Content */
+main {
+    flex: 1; /* Pushes the footer to the bottom if there's little content */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 10px 0;
+}
+
+.footer-links li {
+    margin: 0 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00ccff;
+}
+
+.copyright p {
+    margin: 5px 0;
+}
+
