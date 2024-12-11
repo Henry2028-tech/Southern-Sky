@@ -17,6 +17,12 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+header {
+  background-image: url('header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px; /* Adjust height as needed */
+}
 
 
 .title {
@@ -242,19 +248,84 @@ p {
     color: #fff;
 }
 
-/* Specific Styles for Five-Day Weather Display */
+/* General Styling for the Section */
 #fiveDayWeather {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.4);
-    opacity: 0.5;
+    margin: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+#fiveDayWeather h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
 }
 
 #fiveDayWeather p {
-    text-align: left;
-    color: #fff;
+    font-size: 18px;
+    color: #555;
+}
+
+/* Forecast Container for Horizontal Scrolling */
+.forecast-container {
+    display: flex;
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px;
+    gap: 15px; /* Space between forecast items */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #4CAF50 #eee; /* Scrollbar colors */
+}
+
+.forecast-container::-webkit-scrollbar {
+    height: 8px; /* Horizontal scrollbar height */
+}
+
+.forecast-container::-webkit-scrollbar-thumb {
+    background: #4CAF50; /* Scrollbar color */
+    border-radius: 10px;
+}
+
+.forecast-container::-webkit-scrollbar-track {
+    background: #eee; /* Track color */
+}
+
+/* Individual Forecast Item Styling */
+.forecast-item {
+    flex: 0 0 200px; /* Fixed width for forecast items */
+    background: #f9f9f9; /* Light background */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px;
+    padding: 15px;
+    text-align: left; /* Align text for readability */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.forecast-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.forecast-item p {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.forecast-item strong {
+    font-size: 18px;
+    color: #000;
+}
+
+/* Weather Chart Section */
+#weatherChart {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#myWeatherChart {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Responsive Styles */
@@ -348,47 +419,104 @@ p {
 }
 
 
-    #footer {
-        background-color: #333;
-        color: #ffff;
-        text-align: center;
-        padding: 20px 10px;
-        margin-top: 20px;
-    }
+    /* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    #footer .footer-content {
-        max-width: 1200px;
-        margin: auto;
-    }
+/* Body and Wrapper Layout */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body is at least the height of the viewport */
+    font-family: Arial, sans-serif;
+}
 
-    #footer nav a {
-        color: #ffm107;
-        text-decoration: none;
-        margin: 0 10px;
-    }
+.wrapper {
+    flex: 1; /* Ensures the wrapper takes all available space */
+    display: flex;
+    flex-direction: column;
+}
 
-    #footer nav a:hover {
-        text-decoration: underline;
-    }
+/* Main Content */
+main {
+    flex: 1; /* Pushes the footer to the bottom if there's little content */
+    padding: 20px;
+    text-align: center;
+}
 
-    #footer p {
-        margin: 10px 0;
-    }
+/* Footer Styling */
+footer {
+    background-color: #333;
+    color: #fff; /* Fix inconsistent color spelling */
+    text-align: center;
+    padding: 20px 10px;
+    margin-top: 20px;
+}
 
+footer .footer-content {
+    max-width: 1200px;
+    margin: auto;
+}
 
+footer nav a {
+    color: #ffcc00; /* Fixed typo in hex color code */
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
 
-    #infoModal {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 70%;
-        height: 65%;
-        background: rgba(0, 0, 0, 0.8);
-        display: none;
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-    }
+footer nav a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 10px 0;
+}
+
+.footer-links li {
+    margin: 0 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #4CAF50;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00ccff;
+}
+
+footer .copyright p {
+    margin: 5px 0;
+}
+
+/* Modal Styling */
+#infoModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 65%;
+    background: rgba(0, 0, 0, 0.8);
+    display: none; /* Ensure modal is hidden initially */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white; /* Ensure content inside modal is visible */
+    padding: 20px;
+    text-align: center;
+}
 
     #infoModal.show {
         display: flex;
@@ -421,7 +549,7 @@ p {
     }
 /* Default link styles */
 a {
-    color: #0056b3; /* A muted blue that's clean and visible */
+    color: #008b2; /* A muted blue that's clean and visible */
     text-decoration: none;
 }
 
@@ -433,7 +561,7 @@ a:hover {
 
 /* Visited link styles */
 a:visited {
-    color: #4a4a4a; /* Neutral gray for visited links */
+    color: #1a2a3a; /* Neutral gray for visited links */
 }
 
 
@@ -460,4 +588,23 @@ a:visited {
 .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 5px;
+}
+
+body {
+  background-image: url('background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+  z-index: -1;
 }
